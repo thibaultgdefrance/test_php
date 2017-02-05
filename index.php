@@ -1,13 +1,5 @@
 <?php
-declare(strict_types=1);
-require_once('function.php');
-include 'membre.php';
-direBonjour('Defrance' ,'Thibault');
-$headers = 'From : thibaustin@hotmail.fr';
-MAIL( 'thibault.g.defrance@gmail.com', 'mon premier mail', 'Bonjour Thibault, tu te parles à toi même',$headers );
-
-$password = bin2hex(random_bytes(8));
-echo'nouveau mot de passe '.$password;
+var_dump($_SERVER);
 
 ; ?>
 
@@ -18,12 +10,9 @@ echo'nouveau mot de passe '.$password;
         <title></title>
     </head>
     <body>
-        <?php
-            foreach ( $membres as $key => $info) {
-        ?>
-        <h1><?= $key ?> </h1> <?= $info ?><br >
-        <?php
-        }
-        ?>
+        <form action="" method="post" enctype="multipart/form-data">
+                <input type="file" name="avatar"  />
+                <input type="submit" value="Uploader" />
+        </form>
     </body>
 </html>
